@@ -455,6 +455,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;display:flex;al
       <button class="cat-tab" onclick="filterCat('Filtros',this)">🔧 Filtros</button>
       <button class="cat-tab" onclick="filterCat('Suspensão',this)">🚗 Suspensão</button>
       <button class="cat-tab" onclick="filterCat('Presilhas',this)">🔩 Presilhas</button>
+      <button class="cat-tab" onclick="filterCat('Motor',this)">🔩 Motor</button>
+      <button class="cat-tab" onclick="filterCat('Elétrica',this)">⚡ Elétrica</button>
     </div>
 
     <div class="empty-msg" id="emptyMsg">
@@ -629,6 +631,39 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;display:flex;al
         </div>
       </div>
 
+      <div class="prod-card" data-search="tampa reservatorio radiador fiesta ford original 7s558100aa" data-cat="Motor">
+        <img class="prod-img" src="https://i.ibb.co/XrHp98Sb/Chat-GPT-Image-29-de-mai-de-2026-15-00-16.png" alt="Tampa Reservatório Radiador Fiesta Ford">
+        <div class="prod-body">
+          <div class="prod-cat">🔩 Motor</div>
+          <h3>Tampa Reservatório Radiador Fiesta Ford</h3>
+          <p>Cód. 7S558100AA · Original de Reposição</p>
+          <div class="prod-price">A consultar</div>
+          <button class="btn-detail" onclick="goPage('det-tampa-ford')">Ver Detalhes</button>
+        </div>
+      </div>
+
+      <div class="prod-card" data-search="fusivel automotivo universal lamina padrao 2a 40a kit" data-cat="Elétrica">
+        <img class="prod-img" src="https://i.ibb.co/fVqs0rkY/Chat-GPT-Image-29-de-mai-de-2026-15-00-39.png" alt="Fusível Automotivo Universal Lâmina Padrão">
+        <div class="prod-body">
+          <div class="prod-cat">⚡ Elétrica</div>
+          <h3>Fusível Automotivo Universal Lâmina Padrão</h3>
+          <p>2A ao 40A · Kit completo 10 amperagens</p>
+          <div class="prod-price">R$ 1,00 / un.</div>
+          <button class="btn-detail" onclick="goPage('det-fusivel')">Ver Detalhes</button>
+        </div>
+      </div>
+
+      <div class="prod-card" data-search="vela ignicao ngk laser iridium premium ilzkbr7b8dg 95770" data-cat="Motor">
+        <img class="prod-img" src="https://i.ibb.co/21G1jqLd/Chat-GPT-Image-29-de-mai-de-2026-15-00-29.png" alt="Vela de Ignição NGK Laser Iridium Premium">
+        <div class="prod-body">
+          <div class="prod-cat">🔩 Motor</div>
+          <h3>Vela de Ignição NGK Laser Iridium Premium</h3>
+          <p>Cód. ILZKBR7B8DG · Nº 95770</p>
+          <div class="prod-price">A consultar</div>
+          <button class="btn-detail" onclick="goPage('det-vela-ngk')">Ver Detalhes</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -649,6 +684,9 @@ var PRODS = [
   {id:'det-p-amarela',img:'https://i.ibb.co/3y8r4f3Y/presilha-19mm-po-10mm.png',alt:'Presilha Amarela',badge:'🔩 Presilhas',name:'Presilha Amarela Para-lama',price:'R$ 5,00',desc:'Presilha plástica amarela para fixação de para-lamas e painéis. Encaixe simples e remoção sem danos.',feats:['Fixação firme','Material plástico resistente','Fácil instalação','Vários modelos'],specs:[['Cor','Amarela'],['Diâmetro','19mm'],['Haste','10mm'],['Aplicação','Para-lama / Painel']],buy:'Presilha+Amarela+Para-lama+19mm+-+R%24+5%2C00',ask:'Presilha+Amarela+Para-lama'},
   {id:'det-p-preta',img:'https://i.ibb.co/G4dSxcRC/presilha-12mm-por-4mm.png',alt:'Presilha Preta',badge:'🔩 Presilhas',name:'Presilha Preta Para-lama',price:'R$ 5,00',desc:'Presilha de encaixe rápido para fixação de para-lamas e frisos. Design compacto e discreto.',feats:['Encaixe rápido','Alta durabilidade','Design discreto','Compatível com vários modelos'],specs:[['Cor','Preta'],['Diâmetro','12mm'],['Haste','4mm'],['Aplicação','Para-lama / Friso']],buy:'Presilha+Preta+Para-lama+12mm+-+R%24+5%2C00',ask:'Presilha+Preta+Para-lama'},
   {id:'det-p-parafuso',img:'https://i.ibb.co/0jgG4s44/presilha-19mm-7mm.png',alt:'Presilha Parafuso',badge:'🔩 Presilhas',name:'Presilha Estilo Parafuso',price:'R$ 5,00',desc:'Presilha com rosca para fixação extra firme de para-choques e painéis que exigem maior resistência.',feats:['Fixação extra firme com rosca','Alta resistência','Para-choques e painéis','Remoção manual fácil'],specs:[['Cor','Preta'],['Diâmetro','22mm'],['Haste','6mm'],['Tipo','Rosca'],['Aplicação','Para-choque / Painel']],buy:'Presilha+Estilo+Parafuso+22mm+-+R%24+5%2C00',ask:'Presilha+Estilo+Parafuso'},
+  {id:'det-tampa-ford',img:'https://i.ibb.co/XrHp98Sb/Chat-GPT-Image-29-de-mai-de-2026-15-00-16.png',alt:'Tampa Radiador Fiesta Ford',badge:'🔩 Motor',name:'Tampa Reservatório Radiador Fiesta Ford',price:'A consultar',desc:'Tampa original de reposição Ford para o reservatório do radiador do Fiesta. Peça genuína que garante vedação perfeita e proteção do sistema de arrefecimento.',feats:['Peça original Ford de reposição','Vedação perfeita do reservatório','Protege o sistema de arrefecimento','Código 7S558100AA'],specs:[['Marca','Ford'],['Código','7S558100AA'],['Tipo','Tampa Reservatório'],['Compatível','Ford Fiesta'],['Condição','Original de Reposição']],buy:'Ol%C3%A1%2C%20quero%20comprar%3A%20Tampa%20Reservat%C3%B3rio%20Radiador%20Fiesta%20Ford%207S558100AA',ask:'Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%3A%20Tampa%20Reservat%C3%B3rio%20Radiador%20Fiesta%20Ford'},
+  {id:'det-fusivel',img:'https://i.ibb.co/fVqs0rkY/Chat-GPT-Image-29-de-mai-de-2026-15-00-39.png',alt:'Fusível Automotivo Universal',badge:'⚡ Elétrica',name:'Fusível Automotivo Universal Lâmina Padrão 2A ao 40A',price:'R$ 1,00 / unidade',desc:'Kit completo de fusíveis automotivos universais lâmina padrão com 10 amperagens diferentes. Essencial para manutenção elétrica do veículo.',feats:['10 amperagens: 2A, 3A, 5A, 7,5A, 10A, 15A, 20A, 25A, 30A e 40A','Lâmina padrão universal','Estojo organizador incluso','Compatível com a maioria dos veículos'],specs:[['Tipo','Lâmina Padrão Universal'],['Amperagens','2A ao 40A'],['Variações','10 amperagens'],['Aplicação','Elétrica Automotiva']],buy:'Ol%C3%A1%2C%20quero%20comprar%3A%20Fus%C3%ADvel%20Automotivo%20Universal%20L%C3%A2mina%20Padr%C3%A3o%202A%20ao%2040A%20-%20R%24%201%2C00/unidade',ask:'Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%3A%20Fus%C3%ADvel%20Automotivo%20Universal%20L%C3%A2mina%20Padr%C3%A3o'},
+  {id:'det-vela-ngk',img:'https://i.ibb.co/21G1jqLd/Chat-GPT-Image-29-de-mai-de-2026-15-00-29.png',alt:'Vela NGK Laser Iridium Premium',badge:'🔩 Motor',name:'Vela de Ignição NGK Laser Iridium Premium',price:'A consultar',desc:'Vela de ignição NGK Laser Iridium Premium — tecnologia de ponta com eletrodo de irídio para máxima performance, economia de combustível e maior durabilidade.',feats:['Eletrodo de irídio — alta durabilidade','Máxima performance de ignição','Melhor economia de combustível','Código ILZKBR7B8DG · Nº 95770'],specs:[['Marca','NGK'],['Linha','Laser Iridium Premium'],['Código','ILZKBR7B8DG'],['Número','95770'],['Material','Irídio'],['Tipo','Vela de Ignição']],buy:'Ol%C3%A1%2C%20quero%20comprar%3A%20Vela%20de%20Igni%C3%A7%C3%A3o%20NGK%20Laser%20Iridium%20Premium%20ILZKBR7B8DG',ask:'Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%3A%20Vela%20NGK%20Laser%20Iridium%20Premium'},
   {id:'det-moura',img:'https://i.ibb.co/xKgXpJ0Z/2f5ec39c-e85d-4707-ba56-b14b8d3c9b3b.png',alt:'Bateria Moura 60Ah',badge:'🔋 Baterias',name:'Bateria Moura 60Ah',price:'A consultar',desc:'A Bateria Moura é referência nacional em qualidade e durabilidade. Com 60 amperes, garante partidas confiáveis e alta performance para veículos de passeio e utilitários.',feats:['12V · 60 Amperes','Alta durabilidade Moura','Tecnologia de baixa manutenção','Referência nacional em baterias'],specs:[['Marca','Moura'],['Tensão','12V'],['Capacidade','60Ah'],['Aplicação','Passeio / Utilitário']],buy:'Ol%C3%A1%2C%20quero%20comprar%3A%20Bateria%20Moura%2060Ah',ask:'Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%3A%20Bateria%20Moura%2060Ah'},
   {id:'det-asx-branca',img:'https://i.ibb.co/Q7mYgYw7/7b54141d-a6e9-4cf8-995b-873aa8472b78.jpg',alt:'ASX Super Branca H11',badge:'💡 Iluminação',name:'Lâmpada ASX Super Branca H11',price:'A consultar',desc:'Lâmpada halógena ASX Super Branca H11 com tecnologia de luz branca de alta intensidade. Proporciona melhor visibilidade noturna com encaixe H11, compatível com diversos modelos.',feats:['12V · 55W de potência','Luz super branca de alta intensidade','Base H11 — PGJ19-2','Superior visibilidade noturna'],specs:[['Marca','ASX'],['Modelo','H11 Super Branca'],['Tensão','12V'],['Potência','55W'],['Base','PGJ19-2'],['Cor','Super Branca']],buy:'Ol%C3%A1%2C%20quero%20comprar%3A%20L%C3%A2mpada%20ASX%20Super%20Branca%20H11%2012V%2055W',ask:'Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%3A%20L%C3%A2mpada%20ASX%20Super%20Branca%20H11'},
   {id:'det-asx-h4',img:'https://i.ibb.co/4ng6cJVF/21e1689a-1054-4c14-ae77-010800bc518f.jpg',alt:'ASX H4 Clear',badge:'💡 Iluminação',name:'Lâmpada ASX H4 Clear',price:'A consultar',desc:'Lâmpada halógena ASX H4 linha Clear com luz original natural. Encaixe H4 para faróis duplos — farol alto e baixo em uma única lâmpada.',feats:['12V · 55W de potência','Farol alto e baixo (duplo filamento)','Base P43t — encaixe H4','Luz original Clear'],specs:[['Marca','ASX'],['Modelo','H4 Clear'],['Tensão','12V'],['Potência','55W'],['Base','P43t'],['Filamentos','Duplo (alto e baixo)']],buy:'Ol%C3%A1%2C%20quero%20comprar%3A%20L%C3%A2mpada%20ASX%20H4%20Clear%2012V%2055W',ask:'Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%3A%20L%C3%A2mpada%20ASX%20H4%20Clear'},
